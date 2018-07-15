@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
 
-var TodoSchema = new Schema({
+var TodoSchema = new mongoose.Schema({
   text: {
-    type: String
+    type: String,
+    required: true
   },
   completed: {
     type: Boolean
@@ -13,4 +13,4 @@ var TodoSchema = new Schema({
   }
 });
 
-module.exports = { TodoSchema };
+module.exports = mongoose.model('Todos', TodoSchema);
